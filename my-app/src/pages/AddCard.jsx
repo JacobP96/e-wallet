@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import UserCards from "../components/UserCards"
 const AddCard = (props) =>{
     
     
@@ -8,7 +9,12 @@ const AddCard = (props) =>{
         <Link to={{
             pathname: "/"
         }}>
-        <button>Back to home page</button></Link>
+        <button>Back to HomePage</button></Link>
+        <br/>
+        <br/>
+
+        <UserCards/>
+       
         
     </div>)
 }
