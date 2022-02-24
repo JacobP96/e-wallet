@@ -14,9 +14,9 @@
        {
          cardnumber: "3434 3434 3434 3434",
          name: "Jacob Persson",
-         validThru: "12/25",
+         validThru: "2025-12",
          ccv: "000",
-         vendor: "Visa"
+         vendor: "VISA"
       }
     ]
    };

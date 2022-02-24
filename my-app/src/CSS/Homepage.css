@@ -1,0 +1,68 @@
+body {
+  font: 16px "Helvetica Neue", Helvetica, sans-serif;
+  background: #fbfbfb;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #000;
+}
+.header {
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+  padding: 50px 0;
+  font-weight: 200;
+}
+.header__title {
+  font-size: 50px;
+  color: #333;
+}
+
+.header__body {
+  min-height: 32px;
+}
+
+.panel {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.card {
+  font: 10.6666666667px "Helvetica Neue", Helvetica, sans-serif;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 400px;
+  height: 240px;
+  text-align: left;
+  padding: 30px;
+  margin-bottom: 50px;
+  color: #fff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: blue;
+}
+.card__number {
+  font-size: 30px;
+  padding: 50px 0 15px;
+  text-align: center;
+}
+.card__expiry-date {
+  font-size: 14px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.card__owner {
+  text-align: left;
+}
+.card__logo {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.card__cvv {
+  text-align: right;
+}
