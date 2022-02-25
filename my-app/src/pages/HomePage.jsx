@@ -7,8 +7,8 @@ const HomePage = (props) =>{
     
     return(<div>
         
-        <header class="header">
-  <h1 class="header__title">Active creditcard</h1>
+        <header className="header">
+  <h1 className="header__title">Active creditcard</h1>
   
 </header>
 
@@ -18,14 +18,15 @@ const HomePage = (props) =>{
              <div
                key={i}
              >
-   <div class="panel">
-  <div class="card card--front">
-  <div class="card__logo"  />   {card.vendor} 
-   <div class="card__number">{card.cardnumber}</div>
-   <div class="card__expiry-date"> valid-thru: {card.validThru}</div>
+               
+   <div className="panel">
+  <div className="card card--front">
+  <div className="card__logo" class="fa fa-cc-visa" aria-hidden="true" />   {card.vendor} 
+   <div className="card__number">{card.cardnumber}</div>
+   <div className="card__expiry-date"> valid-thru: {card.validThru}</div>
  
-   <div class="card__owner">{card.name}</div>
-   <div class="card__cvv">CCV: {card.ccv}</div>
+   <div className="card__owner">{card.name}</div>
+   <div className="card__cvv">CCV: {card.ccv}</div>
   
    
     
