@@ -28,7 +28,7 @@
        case "addCard":
            if(state.cards.length <= 3){
             return { ...state, cards: [...state.cards, action.payload] };
-           }else(alert("sallad"))
+           }else(alert("You can't have more then 4 cards in your wallet"))
            
             default:
         return state;

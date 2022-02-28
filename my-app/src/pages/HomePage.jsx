@@ -15,35 +15,31 @@ const HomePage = (props) =>{
 
   {cards.map((card, i) => {
           return (
-             <div
+            <div class="col-12">
+             <div  className="Card" 
                key={i}
              >
                
-   <div className="panel">
-  <div className="card card--front">
-  <div className="card__logo" class="fa fa-cc-visa" aria-hidden="true" />   {card.vendor} 
-   <div className="card__number">{card.cardnumber}</div>
-   <div className="card__expiry-date"> valid-thru: {card.validThru}</div>
+  
+  
+  <div className="card__logo"  />   {card.vendor} 
+   <div className="card__number" >{card.cardnumber}</div>
+   <div className="card__expiry-date" > valid-thru: {card.validThru}</div>
  
-   <div className="card__owner">{card.name}</div>
+   <div className="card__owner" >{card.name}</div>
    <div className="card__cvv">CCV: {card.ccv}</div>
-  
-   
-    
-             </div>
-             </div>
-  
-  </div>
+   </div>
+   </div>
            );
          })}
    
 
-
+<div class="col-12">
 <Link to={{
             pathname: "/AddCard"
         }}>
-        <button>Add new Card</button></Link>
-        
+        <button className="btn btn-dark">Add New Card</button></Link>
+        </div>
     </div>)
 }
 export default HomePage;

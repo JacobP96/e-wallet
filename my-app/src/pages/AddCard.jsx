@@ -9,7 +9,7 @@ const AddCard = (props) =>{
         <Link to={{
             pathname: "/"
         }}>
-        <button>Back to HomePage</button></Link>
+        <button className="btn btn-dark" >Back to HomePage</button></Link>
         <br/>
         <br/>
 
