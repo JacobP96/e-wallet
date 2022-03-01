@@ -22,9 +22,9 @@ const HomePage = (props) =>{
                
   
   
-  <div className="card__logo"  />   {card.vendor} 
+  <div className="card__vendor"  />   {card.vendor} 
    <div className="card__number" >{card.cardnumber}</div>
-   <div className="card__expiry-date" > valid-thru: {card.validThru}</div>
+   <div className="card__expiry-date" >Valid-Thru: {card.validThru}</div>
  
    <div className="card__owner" >{card.name}</div>
    <div className="card__cvv">CCV: {card.ccv}</div>
