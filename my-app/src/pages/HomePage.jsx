@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "../CSS/Homepage.css";
-
+import { removeCard } from "../redux/ducks/UserCards";
 const HomePage = (props) => {
   const dispatch = useDispatch();
   const cards = useSelector((state) => state.UserCard.cards);
+
+  const handleRemoveCard = (card) => {
+    dispatch(removeCard(card));
+  };
 
   return (
     <div>
@@ -14,7 +18,13 @@ const HomePage = (props) => {
 
       {cards.map((card, i) => {
         return (
-          <div className="col-12" key={i}>
+          <div
+            className="col-12"
+            key={i}
+            onClick={() => {
+              handleRemoveCard(card);
+            }}
+          >
             <div className="Card">
               <div className="card__vendor" /> {card.vendor}
               <div className="card__number">{card.cardnumber}</div>

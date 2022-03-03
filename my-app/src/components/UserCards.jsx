@@ -5,15 +5,14 @@ import { addCard } from "../redux/ducks/UserCards";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../CSS/Homepage.css";
-import { FaCcMastercard, FaCcVisa } from "react-icons/fa";
-import { SiAmericanexpress } from "react-icons/si";
 
 const ListOfCards = () => {
   const dispatch = useDispatch();
-  const cards = useSelector((state) => state.UserCard.cards);
+  const icons = useSelector((state) => state.IconCard.icons);
 
   const [number, setNumber] = useState("xxxx xxxx xxxx xxxx");
-  const [vendor, setVendor] = useState("Choose Vendor");
+  const [vendor, setVendor] = useState("");
+
   const [validThru, setValidThru] = useState("");
   const [cardname, setCardname] = useState("Your name");
   const [cvv, setCvv] = useState("");
@@ -35,13 +34,18 @@ const ListOfCards = () => {
 
   const handleAddCard = () => {
     let cardnumber = document.querySelector("#cardnumber").value;
+    let res = [...cardnumber]
+      .map((d, i) => (i % 4 == 0 ? " " + d : d))
+      .join("")
+      .trim();
+
     let name = document.querySelector("#name").value;
     let vendor = document.querySelector("#vendor").value;
     let ccv = document.querySelector("#cvv").value;
     let validThru = document.querySelector("#validThru").value;
 
     let card = {
-      cardnumber: cardnumber,
+      cardnumber: res,
       name: name,
       vendor: vendor,
       ccv: ccv,
@@ -76,6 +80,7 @@ const ListOfCards = () => {
         <div className="col-12">
           <input
             className="form-control"
+            maxLength="20"
             type="text"
             id="name"
             placeholder="Your Name"
@@ -92,30 +97,9 @@ const ListOfCards = () => {
             onChange={ChangeVendor}
             required
           >
-            <option value="" disabled>
-              Choose a Vendor ...
-            </option>
-            <option
-              value={<FaCcVisa style={{ color: "white", fontSize: "50px" }} />}
-            >
-              Visa{" "}
-            </option>
-            <option
-              value={
-                <FaCcMastercard style={{ color: "white", fontSize: "50px" }} />
-              }
-            >
-              MasterCard
-            </option>
-            <option
-              value={
-                <SiAmericanexpress
-                  style={{ color: "white", fontSize: "50px" }}
-                />
-              }
-            >
-              American Express
-            </option>
+            {icons.map((icon, i) => {
+              return <option key={i}>{icon.visa}</option>;
+            })}
           </select>
         </div>
         <div className="col-12">

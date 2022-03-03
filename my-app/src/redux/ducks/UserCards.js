@@ -7,6 +7,11 @@ export const addCard = (cardObj) => ({
   payload: cardObj,
 });
 
+export const removeCard = (cards) => ({
+  type: "removeCard",
+  payload: cards,
+});
+
 // State
 
 const initialState = {
@@ -17,6 +22,7 @@ const initialState = {
       validThru: "2025-12",
       ccv: "000",
       vendor: <FaCcVisa style={{ color: "white", fontSize: "50px" }} />,
+      visa: <FaCcVisa style={{ color: "white", fontSize: "50px" }} />,
     },
   ],
 };
@@ -29,6 +35,11 @@ const reducer = (state = initialState, action) => {
       if (state.cards.length <= 3) {
         return { ...state, cards: [...state.cards, action.payload] };
       } else alert("You can't have more then 4 cards in your wallet");
+    case "removeCard":
+      return {
+        ...state,
+        cards: state.cards.filter((card) => card !== action.payload),
+      };
 
     default:
       return state;
