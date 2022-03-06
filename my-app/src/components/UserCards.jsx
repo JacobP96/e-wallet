@@ -40,13 +40,14 @@ const ListOfCards = () => {
       .trim();
 
     let name = document.querySelector("#name").value;
+    let touppercase = name.toUpperCase();
     let vendor = document.querySelector("#vendor").value;
     let ccv = document.querySelector("#cvv").value;
     let validThru = document.querySelector("#validThru").value;
 
     let card = {
       cardnumber: res,
-      name: name,
+      name: touppercase,
       vendor: vendor,
       ccv: ccv,
       validThru: validThru,
@@ -96,11 +97,7 @@ const ListOfCards = () => {
             id="vendor"
             onChange={ChangeVendor}
             required
-          >
-            {icons.map((icon, i) => {
-              return <option key={i}>{icon.visa}</option>;
-            })}
-          </select>
+          ></select>
         </div>
         <div className="col-12">
           <input

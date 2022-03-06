@@ -12,6 +12,11 @@ export const removeCard = (cards) => ({
   payload: cards,
 });
 
+export const moveCard = (cards) => ({
+  type: "moveCard",
+  payload: cards,
+});
+
 // State
 
 const initialState = {
@@ -22,7 +27,6 @@ const initialState = {
       validThru: "2025-12",
       ccv: "000",
       vendor: <FaCcVisa style={{ color: "white", fontSize: "50px" }} />,
-      visa: <FaCcVisa style={{ color: "white", fontSize: "50px" }} />,
     },
   ],
 };
@@ -39,6 +43,17 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cards: state.cards.filter((card) => card !== action.payload),
+      };
+    case "moveCard":
+      const newArray = [...state.cards].filter(
+        (card) => card !== action.payload
+      );
+
+      newArray.splice(0, 0, action.payload);
+
+      return {
+        ...state,
+        cards: newArray,
       };
 
     default:
