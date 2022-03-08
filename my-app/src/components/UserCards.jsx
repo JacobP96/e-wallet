@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useSelector, useDispatch } from "react-redux";
 import { addCard } from "../redux/ducks/UserCards";
 import { Link } from "react-router-dom";
@@ -8,10 +7,9 @@ import "../CSS/Homepage.css";
 
 const ListOfCards = () => {
   const dispatch = useDispatch();
-  const icons = useSelector((state) => state.IconCard.icons);
 
   const [number, setNumber] = useState("xxxx xxxx xxxx xxxx");
-  const [vendor, setVendor] = useState("");
+  const [vendor, setVendor] = useState("VISA");
 
   const [validThru, setValidThru] = useState("");
   const [cardname, setCardname] = useState("Your name");
@@ -97,7 +95,11 @@ const ListOfCards = () => {
             id="vendor"
             onChange={ChangeVendor}
             required
-          ></select>
+          >
+            <option value="VISA">VISA</option>
+            <option value="MASTERCARD">MASTERCARD</option>
+            <option value="AMERICAN EXPRESS">AMERICAN EXPRESS</option>
+          </select>
         </div>
         <div className="col-12">
           <input
